@@ -1,6 +1,6 @@
 {
   "name": "transifa",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A package to interact with Iranian payment gateways",
   "author": "Amir.M Azarboon (amirmahdiazarboon@gmail.com)",
   "main": "dist/index.js",
@@ -30,8 +30,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prerelease": "npm version prerelease --preid=alpha",
+    "prepub": "yarn build",
     "pub": "npm publish",
     "pub:dev": "yarn pub --tag dev",
+    "prepub:alpha": "yarn build",
     "pub:alpha": "yarn pub --tag alpha"
   },
   "peerDependencies": {
