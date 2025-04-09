@@ -107,8 +107,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "publishConfig": {
-    "@weblite:registry": "https://git.weblite.me/api/v4/projects/207/packages/npm/"
   }
 }
