@@ -14,7 +14,7 @@ export class ZarinpalCreatePaymentDto {
   amount: number
 
   @IsValidCurrency()
-  currency: 'IRR' | 'IRT' = 'IRR'
+  currency?: 'IRR' | 'IRT' = 'IRR'
 
   description: string
 

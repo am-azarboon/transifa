@@ -17,7 +17,13 @@ export class ZarinpalGatewayService extends ZarinpalBaseService {
    * @param {ZarinpalCreatePaymentDto} data - The data to create a payment request.
    */
   public async create(data: ZarinpalCreatePaymentDto) {
-    const res = await this.request<ZarinpalCreatePaymentResponse>('POST', this.paymentApi, data)
+    const newData = {
+      ...data,
+      currency: data.currency ?? 'IRR',
+      callback_url: data.callbackUrl,
+      order_id: data.orderId,
+    }
+    const res = await this.request<ZarinpalCreatePaymentResponse>('POST', this.paymentApi, newData)
     return {
       authority: res.data.authority,
       fee: res.data.fee,
@@ -44,7 +50,7 @@ export class ZarinpalGatewayService extends ZarinpalBaseService {
       feeType: res.data.fee_type,
       fee: res.data.fee,
       shaparakFee: res.data.shaparak_fee,
-      errors: res.errors ?? [],
+      errors: res.errors ?? null,
     }
   }
 
