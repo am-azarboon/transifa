@@ -1,40 +1,36 @@
-import {
-  IsEmail,
-  IsMobile,
-  IsValidAmount,
-  IsValidCurrency,
-  IsUrl,
-} from '../../../common/utils/decorators.utils'
-
 /*
   Requests
 */
 export class ZarinpalCreatePaymentDto {
-  @IsValidAmount()
   amount: number
 
-  @IsValidCurrency()
-  currency?: 'IRR' | 'IRT' = 'IRR'
+  currency?: 'IRR' | 'IRT'
 
   description: string
 
-  @IsUrl()
   callbackUrl: string
 
-  @IsMobile()
   mobile?: string
 
-  @IsEmail()
   email?: string
 
   orderId?: string
 }
 
 export class ZarinpalVerifyPaymentDto {
-  @IsValidAmount()
   amount: number
 
   authority: string
+}
+
+export class ZarinpalGetTransactionsDto {
+  terminalId: string
+
+  filter?: 'PAID' | 'VERIFIED' | 'TRASH' | 'ACTIVE' | 'REFUNDED'
+
+  limit?: number
+
+  offset?: number
 }
 
 /*
@@ -98,4 +94,14 @@ export class ZarinpalGetUnverifiedResponse {
       }[],
     ]
   }
+}
+
+export class ZarinpalGetTransactionsResponse {
+  Session: {
+    id: string
+    status: string
+    amount: number
+    description: string
+    created_at: string
+  }[]
 }

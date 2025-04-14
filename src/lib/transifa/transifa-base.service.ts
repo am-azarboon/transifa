@@ -1,8 +1,7 @@
-import { Injectable, Optional } from '@nestjs/common'
-import { ZarinpalGatewayService } from './gateways/zarinpal/zarinpal-gateway.service'
+import { Optional } from '@nestjs/common'
+import { ZarinpalGatewayService } from '../gateways/zarinpal/services/zarinpal-gateway.service'
 
-@Injectable()
-export class TransifaService {
+export abstract class TransifaBaseService {
   constructor(@Optional() private readonly zarinpalService: ZarinpalGatewayService) {}
 
   public get zarinpal() {

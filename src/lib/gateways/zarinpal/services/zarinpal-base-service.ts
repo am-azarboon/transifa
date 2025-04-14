@@ -1,19 +1,22 @@
 import axios, { AxiosInstance } from 'axios'
-import { Inject } from '@nestjs/common'
-import { ZarinpalRequestException } from '../../../common/exceptions/zarinpal.exception'
+import { Inject, Optional } from '@nestjs/common'
+import { ZarinpalRequestException } from '../helpers/zarinpal.exceptions'
 import { ZARINPAL_OPTIONS_TOKEN } from '../../../options/transifa-options.constants'
 import { ZarinpalGatewayOptions } from '../../../config/interfaces/gateways/zarinpal.interfaces'
 import {
   ZARINPAL_BASE_URL,
   ZARINPAL_GRAPHQL_URL,
   ZARINPAL_SANDBOX_BASE_URL,
+  ZARINPAL_SANDBOX_GRAPHQL_URL,
 } from '../zarinpal.constants'
 
 export abstract class ZarinpalBaseService {
   private httpClient: AxiosInstance
   private graphqlClient: AxiosInstance
 
-  constructor(@Inject(ZARINPAL_OPTIONS_TOKEN) private readonly options?: ZarinpalGatewayOptions) {
+  constructor(
+    @Optional() @Inject(ZARINPAL_OPTIONS_TOKEN) private readonly options: ZarinpalGatewayOptions,
+  ) {
     this.setAxios()
   }
 
@@ -23,6 +26,10 @@ export abstract class ZarinpalBaseService {
 
   protected get httpBaseUrl() {
     return this.options?.sandbox ? ZARINPAL_SANDBOX_BASE_URL : ZARINPAL_BASE_URL
+  }
+
+  protected get graphqlBaseUrl() {
+    return this.options?.sandbox ? ZARINPAL_SANDBOX_GRAPHQL_URL : ZARINPAL_GRAPHQL_URL
   }
 
   protected get paymentApi() {
@@ -68,8 +75,10 @@ export abstract class ZarinpalBaseService {
       })
       return response?.data
     } catch (error: unknown) {
-      const normalizedError = error instanceof Error ? error : new Error(String(error))
-      throw new ZarinpalRequestException(normalizedError)
+      // const normalizedError = error instanceof Error ? error : new Error(String(error))
+      // throw new ZarinpalRequestException(normalizedError)
+      console.log(error)
+      throw error
     }
   }
 
@@ -108,7 +117,7 @@ export abstract class ZarinpalBaseService {
     })
 
     this.graphqlClient = axios.create({
-      baseURL: ZARINPAL_GRAPHQL_URL,
+      baseURL: this.graphqlBaseUrl,
       headers: {
         'User-Agent': 'ZarinPalSdk/v1 (NestJs)',
         'Content-Type': 'application/json',
