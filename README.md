@@ -62,7 +62,6 @@ import { TransifaModule } from 'transifa'
             merchantId: configService.get('ZARINPAL_MERCHANT_ID'),
             accessToken: configService.get('ZARINPAL_ACCESS_TOKEN'),
             sandbox: configService.get('NODE_ENV') === 'development',
-            isActive: true,
           },
         },
       }),

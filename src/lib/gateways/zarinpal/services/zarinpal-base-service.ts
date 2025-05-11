@@ -68,17 +68,14 @@ export abstract class ZarinpalBaseService {
       const response = await this.httpClient.request<T>({
         method,
         url,
-        data: {
-          merchant_id: this.options?.merchantId,
-          ...data,
-        },
+        data: { merchant_id: this.options?.merchantId, ...data },
       })
       return response?.data
     } catch (error: unknown) {
-      // const normalizedError = error instanceof Error ? error : new Error(String(error))
-      // throw new ZarinpalRequestException(normalizedError)
-      console.log(error)
-      throw error
+      if (error instanceof Error) {
+        throw new ZarinpalRequestException(error)
+      }
+      throw new ZarinpalRequestException(new Error(String(error)))
     }
   }
 
@@ -96,8 +93,10 @@ export abstract class ZarinpalBaseService {
       })
       return response?.data
     } catch (error: unknown) {
-      const normalizedError = error instanceof Error ? error : new Error(String(error))
-      throw new ZarinpalRequestException(normalizedError)
+      if (error instanceof Error) {
+        throw new ZarinpalRequestException(error)
+      }
+      throw new ZarinpalRequestException(new Error(String(error)))
     }
   }
 
