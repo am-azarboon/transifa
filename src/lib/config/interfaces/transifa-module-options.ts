@@ -1,4 +1,4 @@
-import { IdPayGatewayOptions } from './gateways/id-pay.interfaces'
+import { DargahnoGatewayOptions } from './gateways/dargahno.interfaces'
 import { ZarinpalGatewayOptions } from './gateways/zarinpal.interfaces'
 
 /**
@@ -12,8 +12,8 @@ export interface TransifaModuleOptions {
     zarinpal?: ZarinpalGatewayOptions
 
     /**
-     * Id Pay gateway options.
+     * Dargahno gateway options.
      */
-    idPay?: IdPayGatewayOptions
+    dargahno?: DargahnoGatewayOptions
   }
 }

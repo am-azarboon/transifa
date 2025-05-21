@@ -1,4 +1,4 @@
-export interface IdPayGatewayOptions {
+export interface DargahnoGatewayOptions {
   /**
    * Whether the gateway is active and can be used.
    * @default true
@@ -12,8 +12,12 @@ export interface IdPayGatewayOptions {
   merchantId: string
 
   /**
-   * Whether the gateway is in sandbox mode
-   * @default false
+   * Username for login process and getting Auth token.
    */
-  sandbox?: boolean
+  username: string
+
+  /**
+   * Password for login process and getting Auth token.
+   */
+  password: string
 }
