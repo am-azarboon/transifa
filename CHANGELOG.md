@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/am-azarboon/transifa/compare/v0.1.5...v0.2.0) (2025-05-21)
+
+
+### Features
+
+* Implement Dargahno gateway ([e76013f](https://github.com/am-azarboon/transifa/commit/e76013f58c24598d05d7560c7f359580510e50f4))
+
 ### [0.1.5](https://github.com/am-azarboon/transifa/compare/v0.1.4...v0.1.5) (2025-05-11)
 
 ### [0.1.4](https://github.com/am-azarboon/transifa/compare/v0.1.3...v0.1.4) (2025-05-11)
