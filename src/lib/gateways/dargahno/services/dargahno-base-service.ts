@@ -69,6 +69,7 @@ export abstract class DargahnoBaseService {
           merchent_id: this.options?.merchantId, // This is a typing mistake from gateway creators!!
           ...data,
         },
+        params: method === 'GET' ? data : undefined,
       })
       return response?.data
     } catch (err: unknown) {
