@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/am-azarboon/transifa/compare/v0.2.0...v0.2.1) (2025-05-22)
+
+
+### Bug Fixes
+
+* **zarinpal:** Fix Zarinpal getUnverified response issue ([c0f68ee](https://github.com/am-azarboon/transifa/commit/c0f68eefc1fc65a4f9b74019f01120acfd934165))
+
 ## [0.2.0](https://github.com/am-azarboon/transifa/compare/v0.1.5...v0.2.0) (2025-05-21)
 
 
