@@ -113,11 +113,7 @@ export class ZarinpalGatewayService extends ZarinpalBaseService {
    */
   public async getUnverified() {
     const res = await this.request<ZarinpalGetUnverifiedResponse>('POST', this.unverifiedApi, {})
-    return {
-      code: res.data.code ?? null,
-      message: res.data.message ?? null,
-      authorities: res.data.authorities ?? [],
-    }
+    return res.data
   }
 
   /**

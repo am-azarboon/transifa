@@ -84,15 +84,13 @@ export class ZarinpalGetUnverifiedResponse {
   data: {
     code?: number
     message?: string
-    authorities?: [
-      {
-        authority: string
-        amount: number
-        callback_url: string
-        referer: string
-        date: string
-      }[],
-    ]
+    authorities?: {
+      authority: string
+      amount: number
+      callback_url: string
+      referer: string
+      date: string
+    }[]
   }
 }
 
