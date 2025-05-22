@@ -1,6 +1,6 @@
 {
   "name": "transifa",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A package to interact with Iranian payment gateways",
   "author": "Amir.M Azarboon (amirmahdiazarboon@gmail.com)",
   "main": "dist/index.js",
