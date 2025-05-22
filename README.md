@@ -1,6 +1,6 @@
 # Transifa
 
-A NestJS package for integrating with various payment gateways. Currently supports Zarinpal gateway with plans to add more gateways in the future.
+A NestJS package to interact with various payment gateways. Currently supports Zarinpal gateway with plans to add more gateways in the future.
 
 ## Installation
 
