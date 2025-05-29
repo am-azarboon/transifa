@@ -181,6 +181,9 @@ if (verification.status === 1) {
 
 - `getTransactions()`: Get a list of transactions with optional filtering.
 - `invoiceNumber()`: Get the last registered invoice (factor) number.
+- `registerShopMobile()`: Register a new mobile number for a shop and get verification code.
+- `verifyShopMobile()`: Verify registered mobile with given code.
+- `getShopMobiles()`: Get list of all mobiles for a specific shop. 
 
 ---
 
