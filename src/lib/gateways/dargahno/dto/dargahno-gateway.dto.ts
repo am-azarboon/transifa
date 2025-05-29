@@ -38,6 +38,17 @@ export class DargahnoGetListDto {
   size?: number
 }
 
+export class DargahnoRegisterShopMobileDto {
+  mobile: string
+  shopId: number
+}
+
+export class DargahnoVerifyShopMobileDto {
+  mobile: string
+  shopId: number
+  verificationCode: string
+}
+
 /*
   Responses
 */
@@ -86,4 +97,20 @@ export class DargahnoGetListResponse {
   page: number
   size: number
   pages: number
+}
+
+export class DargahnoRegisterShopMobileResponse {
+  detail: string
+}
+
+export class DargahnoVerifyShopMobileResponse {
+  detail: string
+}
+
+export class DargahnoGetShopMobilesResponse {
+  items: {
+    mobile: string
+    shop_id: number
+    active_state: boolean
+  }[]
 }

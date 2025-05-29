@@ -53,7 +53,19 @@ export abstract class DargahnoBaseService {
     return '/api/v2/transaction/factor_number'
   }
 
-  async request<T>(method: 'GET' | 'POST', url: string, data?: Record<string, any>) {
+  protected get verificationCodeShopMobileApi() {
+    return '/api/v2/shop/verification_code_shop_mobile'
+  }
+
+  protected get verifyShopMobileApi() {
+    return '/api/v2/shop/verify_shop_mobile'
+  }
+
+  protected get getShopMobilesApi() {
+    return '/api/v2/shop/shopmobiles'
+  }
+
+  async request<T>(method: 'GET' | 'POST' | 'DELETE', url: string, data?: Record<string, any>) {
     await this.login()
 
     try {
