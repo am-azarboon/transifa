@@ -139,6 +139,9 @@ if (verification.code === 100) {
 - `getUnverified()`: Get a list of unverified payments
 - `getTransactions(data: ZarinpalGetTransactionsDto)`: Get a list of transactions
 
+#### Official Documentation
+To get more information about API (e.g. error status codes) refer to [official documentation](https://www.zarinpal.com/docs/paymentGateway/).
+
 ---
 
 ### Dargahno Gateway

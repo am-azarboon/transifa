@@ -67,7 +67,7 @@ export class ZarinpalInquireResponse {
   data: {
     code: number
     message: string
-    status: string
+    status: 'VERIFIED' | 'PAID' | 'IN_BANK' | 'FAILED' | 'REVERSED'
   }
   errors: Array<unknown> | object
 }
